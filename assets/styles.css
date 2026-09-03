@@ -1,0 +1,369 @@
+/* =========================================================
+   HealthCare+ Modern Hospital Management System Design System
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,opsz,wght@0,6..18,300;0,6..18,400;0,6..18,500;0,6..18,600;0,6..18,700;0,6..18,800&display=swap');
+
+/* ── Global Typography & Reset ── */
+html, body, [class*="css"], [class*="st-"] {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Page Background */
+.stApp {
+    background: #f0f4f8;
+}
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0a0f1e 0%, #111827 60%, #0f1f3d 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: #e2e8f0 !important;
+}
+
+[data-testid="stSidebar"] .stRadio label,
+[data-testid="stSidebar"] .stRadio > div > label {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    font-weight: 500;
+    display: block;
+}
+
+[data-testid="stSidebar"] .stRadio label:hover {
+    background: rgba(59, 130, 246, 0.18) !important;
+    border-color: rgba(59, 130, 246, 0.45) !important;
+    transform: translateX(4px);
+    color: #ffffff !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h3 {
+    font-size: 1.45rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+/* ── Page Title (st.title) ── */
+h1 {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+h2, h3, h4, h5 {
+    color: #1e293b !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em !important;
+}
+
+/* ── Form Cards ── */
+[data-testid="stForm"] {
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    border: 1px solid #dde3ed !important;
+    padding: 2rem 2.2rem !important;
+    box-shadow: 0 4px 24px -4px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15,23,42,0.04) !important;
+    transition: box-shadow 0.3s ease;
+}
+
+[data-testid="stForm"]:hover {
+    box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.09) !important;
+}
+
+/* ── Input Fields ── */
+div[data-baseweb="input"] > div,
+div[data-baseweb="select"] > div,
+div[data-baseweb="textarea"] > div {
+    border-radius: 10px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    background-color: #f8fafc !important;
+    transition: all 0.2s ease-in-out !important;
+    font-weight: 500 !important;
+    color: #0f172a !important;
+}
+
+div[data-baseweb="input"]:focus-within > div,
+div[data-baseweb="textarea"]:focus-within > div {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
+    background-color: #ffffff !important;
+}
+
+/* Typed text inside inputs — force black */
+input, textarea {
+    color: #0f172a !important;
+    caret-color: #2563eb !important;
+}
+
+/* Placeholder text */
+input::placeholder, textarea::placeholder {
+    color: #94a3b8 !important;
+    font-weight: 400 !important;
+}
+
+/* ── Labels ── */
+[data-testid="stWidgetLabel"] p, label {
+    font-weight: 600 !important;
+    color: #374151 !important;
+    font-size: 0.875rem !important;
+    margin-bottom: 4px !important;
+}
+
+/* ── Buttons ── */
+.stButton > button, .stFormSubmitButton > button {
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    padding: 0.6rem 1.5rem !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06) !important;
+}
+
+.stButton > button[kind="primary"],
+.stFormSubmitButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28) !important;
+}
+
+.stButton > button[kind="primary"]:hover,
+.stFormSubmitButton > button[kind="primary"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.38) !important;
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+}
+
+.stButton > button:not([kind="primary"]):hover {
+    border-color: #94a3b8 !important;
+    background: #f8fafc !important;
+    transform: translateY(-1px) !important;
+}
+
+.stButton > button:active, .stFormSubmitButton > button:active {
+    transform: translateY(0px) !important;
+}
+
+/* ── Tab Navigation ── */
+div[data-baseweb="tab-list"] {
+    background-color: #eef2f7;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 4px;
+}
+
+button[data-baseweb="tab"] {
+    border-radius: 9px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    color: #64748b !important;
+    transition: all 0.2s ease !important;
+    background: transparent !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #ffffff !important;
+    color: #2563eb !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.09) !important;
+}
+
+/* ── Metric Cards ── */
+[data-testid="stMetric"] {
+    background: linear-gradient(160deg, #ffffff 0%, #f8fafc 100%) !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 1.3rem 1.5rem !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+    border-color: #93c5fd !important;
+}
+
+[data-testid="stMetricLabel"] > div {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+}
+
+[data-testid="stMetricValue"] > div {
+    font-size: 1.85rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* ── Expanders ── */
+[data-testid="stExpander"] {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+    margin-bottom: 0.75rem !important;
+    overflow: hidden !important;
+    transition: box-shadow 0.2s ease;
+}
+
+[data-testid="stExpander"]:hover {
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-testid="stExpander"] summary {
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    padding: 0.9rem 1.25rem !important;
+}
+
+[data-testid="stExpander"] summary:hover {
+    background-color: #f8fafc !important;
+}
+
+/* ── DataFrames ── */
+[data-testid="stDataFrame"] {
+    border-radius: 14px !important;
+    border: 1px solid #e2e8f0 !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* ── Alert / Info / Warning Boxes ── */
+[data-testid="stAlert"] {
+    border-radius: 12px !important;
+    border-left-width: 5px !important;
+    font-weight: 500 !important;
+    padding: 1rem 1.25rem !important;
+}
+
+/* ── Divider ── */
+hr {
+    border-color: #e2e8f0 !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* ── Header Banner (Login Page) ── */
+.main-header {
+    background: linear-gradient(135deg, #0a0f1e 0%, #0f2557 40%, #1d4ed8 80%, #2563eb 100%);
+    color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 16px 40px -10px rgba(29, 78, 216, 0.45);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.main-header::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: 5%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(147,197,253,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.main-header h1 {
+    margin: 0 !important;
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.035em !important;
+    position: relative;
+    z-index: 1;
+}
+
+.main-header p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.85;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #bfdbfe;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Disclaimer Box ── */
+.disclaimer-box {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-left: 4px solid #f59e0b;
+    padding: 1.1rem 1.3rem;
+    border-radius: 10px;
+    color: #92400e;
+    margin: 1.5rem 0;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+}
+
+/* ── Status Badges ── */
+.badge {
+    display: inline-block;
+    padding: 0.3em 0.75em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+.badge-pending  { background: #fef3c7; color: #b45309; }
+.badge-confirmed { background: #dbeafe; color: #1d4ed8; }
+.badge-completed { background: #dcfce7; color: #15803d; }
+.badge-cancelled { background: #fee2e2; color: #b91c1c; }
+
+/* ── Selectbox ── */
+div[data-baseweb="select"] > div:first-child {
+    border-radius: 10px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    font-weight: 500 !important;
+    min-height: 42px !important;
+}
+
+/* ── Number Input ── */
+div[data-testid="stNumberInput"] > div {
+    border-radius: 10px !important;
+    background: #f8fafc !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
