@@ -104,10 +104,10 @@ div[data-baseweb="select"] > div,
 div[data-baseweb="textarea"] > div {
     border-radius: 10px !important;
     border: 1.5px solid #cbd5e1 !important;
-    background-color: #f8fafc !important;
+    background-color: #ffffff !important;
     transition: all 0.2s ease-in-out !important;
     font-weight: 500 !important;
-    color: #0f172a !important;
+    color: #000000 !important;
 }
 
 div[data-baseweb="input"]:focus-within > div,
@@ -117,10 +117,11 @@ div[data-baseweb="textarea"]:focus-within > div {
     background-color: #ffffff !important;
 }
 
-/* Typed text inside inputs — force black */
-input, textarea {
-    color: #0f172a !important;
+/* Typed text inside inputs — force black and white background */
+input, textarea, select {
+    color: #000000 !important;
     caret-color: #2563eb !important;
+    background-color: transparent !important; /* Let the wrapper's white show through */
 }
 
 /* Placeholder text */
