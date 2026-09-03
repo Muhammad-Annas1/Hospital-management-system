@@ -25,24 +25,38 @@ html, body, [class*="css"], [class*="st-"] {
     color: #e2e8f0 !important;
 }
 
-[data-testid="stSidebar"] .stRadio label,
-[data-testid="stSidebar"] .stRadio > div > label {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 10px 14px;
-    border-radius: 10px;
-    margin-bottom: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    font-weight: 500;
-    display: block;
+/* Sidebar Radio Alignment Fix */
+[data-testid="stSidebar"] div[role="radiogroup"] label {
+    background: rgba(255, 255, 255, 0.04) !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    margin-bottom: 6px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
 }
 
-[data-testid="stSidebar"] .stRadio label:hover {
+[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
     background: rgba(59, 130, 246, 0.18) !important;
     border-color: rgba(59, 130, 246, 0.45) !important;
-    transform: translateX(4px);
+    transform: translateX(4px) !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] label * {
     color: #ffffff !important;
+}
+
+/* Sidebar Button Fix (Logout) - Black text on white */
+[data-testid="stSidebar"] .stButton > button {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+[data-testid="stSidebar"] .stButton > button * {
+    color: #0f172a !important;
 }
 
 [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h3 {
@@ -116,10 +130,10 @@ input::placeholder, textarea::placeholder {
 }
 
 /* ── Labels ── */
-[data-testid="stWidgetLabel"] p, label {
-    font-weight: 600 !important;
-    color: #374151 !important;
-    font-size: 0.875rem !important;
+[data-testid="stWidgetLabel"] p, label, .stMarkdown p {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    font-size: 0.9rem !important;
     margin-bottom: 4px !important;
 }
 
@@ -172,16 +186,16 @@ div[data-baseweb="tab-list"] {
 button[data-baseweb="tab"] {
     border-radius: 9px !important;
     padding: 10px 20px !important;
-    font-weight: 600 !important;
-    font-size: 0.88rem !important;
-    color: #64748b !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    color: #000000 !important;
     transition: all 0.2s ease !important;
     background: transparent !important;
 }
 
 button[data-baseweb="tab"][aria-selected="true"] {
-    background-color: #ffffff !important;
-    color: #2563eb !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.09) !important;
 }
 
@@ -210,10 +224,13 @@ button[data-baseweb="tab"][aria-selected="true"] {
 }
 
 [data-testid="stMetricValue"] > div {
-    font-size: 1.85rem !important;
+    font-size: 1.4rem !important;
     font-weight: 800 !important;
     color: #0f172a !important;
     letter-spacing: -0.02em !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    word-break: break-word !important;
 }
 
 /* ── Expanders ── */
@@ -250,11 +267,27 @@ button[data-baseweb="tab"][aria-selected="true"] {
 }
 
 /* ── Alert / Info / Warning Boxes ── */
-[data-testid="stAlert"] {
+[data-testid="stAlert"], [data-testid="stAlert"] * {
     border-radius: 12px !important;
     border-left-width: 5px !important;
-    font-weight: 500 !important;
-    padding: 1rem 1.25rem !important;
+    font-weight: 700 !important;
+    padding: 0.5rem 1rem !important;
+    color: #000000 !important;
+}
+
+/* Force all normal markdown text outside sidebar to be black */
+.stApp .stMarkdown p, .stApp [data-testid="stAlert"] p {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+/* Fix sidebar text color to remain white (overriding the rule above) */
+[data-testid="stSidebar"] .stMarkdown p, 
+[data-testid="stSidebar"] .stMarkdown h1, 
+[data-testid="stSidebar"] .stMarkdown h2, 
+[data-testid="stSidebar"] .stMarkdown h3 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
 }
 
 /* ── Divider ── */
@@ -307,12 +340,12 @@ hr {
     z-index: 1;
 }
 
-.main-header p {
+.stApp .main-header p {
     margin: 0.5rem 0 0 0;
-    opacity: 0.85;
+    opacity: 0.95;
     font-size: 1.05rem;
-    font-weight: 400;
-    color: #bfdbfe;
+    font-weight: 500;
+    color: #ffffff !important;
     position: relative;
     z-index: 1;
 }
