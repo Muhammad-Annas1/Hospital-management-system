@@ -149,3 +149,23 @@ hospital-mangement/
 * PDF invoice generation and download.
 * Email/SMS notification simulation logs.
 * Prescription & lab test results storage.
+
+---
+
+## 📄 License
+
+**Copyright (c) 2026 Muhammad Annas. All Rights Reserved.**
+
+This project and all of its source code, files, designs, and associated materials are proprietary and protected by copyright.
+
+No permission is granted to copy, modify, distribute, reproduce, publish, sublicense, sell, or use this project or any part of it for commercial or personal purposes without prior written permission from the copyright holder.
+
+The project is provided for **portfolio and demonstration purposes only**.
+
+For permission to use any part of this project, please contact the copyright holder.
+
+See the [`LICENSE`](./LICENSE) file for full details.
+
+---
+
+*Built with ❤️ by Muhammad Annas*
