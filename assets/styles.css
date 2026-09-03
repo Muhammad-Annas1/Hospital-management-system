@@ -414,3 +414,144 @@ div[data-testid="stNumberInput"] > div {
 ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
 ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* ══════════════════════════════════════
+   📱 MOBILE RESPONSIVE — max-width: 768px
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* Sidebar — collapse friendly */
+    [data-testid="stSidebar"] {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Main content full width */
+    .stApp > div {
+        padding: 0.5rem !important;
+    }
+
+    section[data-testid="stMainBlockContainer"] {
+        padding: 0.75rem !important;
+    }
+
+    /* Header Banner — compact on mobile */
+    .main-header {
+        padding: 1.2rem 1rem !important;
+        border-radius: 12px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .main-header h1 {
+        font-size: 1.4rem !important;
+    }
+
+    .main-header p {
+        font-size: 0.82rem !important;
+    }
+
+    /* Stats strip inside header — stack vertically */
+    .main-header div[style*="display:flex"] {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+
+    /* KPI Metric Cards — full width stack */
+    [data-testid="stMetric"] {
+        padding: 0.8rem 1rem !important;
+        border-radius: 12px !important;
+    }
+
+    [data-testid="stMetricValue"] > div {
+        font-size: 1.1rem !important;
+    }
+
+    [data-testid="stMetricLabel"] > div {
+        font-size: 0.65rem !important;
+    }
+
+    /* Columns — make them stack on mobile */
+    [data-testid="column"] {
+        width: 100% !important;
+        flex: none !important;
+        min-width: 100% !important;
+    }
+
+    /* Tabs — smaller text */
+    button[data-baseweb="tab"] {
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Form Cards — reduce padding */
+    [data-testid="stForm"] {
+        padding: 1rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* Buttons — full width */
+    .stButton > button,
+    .stFormSubmitButton > button {
+        width: 100% !important;
+        font-size: 0.9rem !important;
+        padding: 0.7rem 1rem !important;
+    }
+
+    /* Tables / DataFrames — scrollable */
+    [data-testid="stDataFrame"] {
+        overflow-x: auto !important;
+        display: block !important;
+    }
+
+    /* Expanders — compact */
+    [data-testid="stExpander"] summary {
+        padding: 0.7rem 0.9rem !important;
+        font-size: 0.88rem !important;
+    }
+
+    /* Subheader / title font sizes */
+    h1 { font-size: 1.4rem !important; }
+    h2 { font-size: 1.2rem !important; }
+    h3 { font-size: 1rem !important; }
+
+    /* Charts — full width */
+    .js-plotly-plot {
+        width: 100% !important;
+    }
+
+    /* Input fields — larger touch targets */
+    input, textarea, select {
+        font-size: 1rem !important;
+        min-height: 44px !important;
+    }
+}
+
+/* ══════════════════════════════════════
+   📱 EXTRA SMALL — max-width: 480px
+   ══════════════════════════════════════ */
+@media (max-width: 480px) {
+
+    .main-header {
+        padding: 1rem !important;
+    }
+
+    .main-header h1 {
+        font-size: 1.2rem !important;
+    }
+
+    /* Stack tab navigation */
+    div[data-baseweb="tab-list"] {
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+
+    button[data-baseweb="tab"] {
+        width: 100% !important;
+        text-align: left !important;
+        padding: 10px 14px !important;
+    }
+
+    [data-testid="stMetricValue"] > div {
+        font-size: 1rem !important;
+    }
+}
